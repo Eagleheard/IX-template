@@ -1,0 +1,66 @@
+@import "constants/base.scss";
+@import "constants/media-queries.scss";
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  min-width: 130px;
+  max-width: 200px;
+
+  &--tab {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &--tab-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background: $dark-red;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+      background: $red;
+    }
+    &::after {
+      content: "\2192";
+      width: 1em;
+      height: 1em;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  &--tab-content {
+    max-height: 0;
+    padding: 0 1em;
+    transition: all 0.3s ease-in-out;
+  }
+
+  & p {
+    font-style: italic;
+  }
+
+  @include media-table-large {
+    min-width: 100%;
+  }
+}
+
+#chck1,
+#chck2 {
+  display: none;
+}
+
+#chck1:checked + .aside--tab-label {
+  background: $dark-red;
+}
+
+#chck2:checked + .aside--tab-label::after {
+  transform: rotate(90deg);
+}
+
+input:checked ~ .aside--tab-content {
+  max-height: 100vh;
+  padding: 1em;
+}

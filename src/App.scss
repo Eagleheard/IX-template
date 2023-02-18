@@ -1,0 +1,27 @@
+@import "constants/media-queries.scss";
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  column-gap: 15px;
+  flex-grow: 1;
+}
+
+.App--content {
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.App--content-wrapper {
+  display: flex;
+  gap: 15px;
+  padding: 15px 0;
+  justify-content: space-between;
+}
+
+@include media-table-large {
+  .App--content-wrapper {
+    flex-direction: column-reverse;
+  }
+}

@@ -1,0 +1,93 @@
+@import "constants/base.scss";
+
+.autocomplete {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  z-index: 1;
+
+  &__input {
+    height: 40px;
+    width: 100%;
+    border: 2px solid $black;
+    border-radius: 20px;
+    outline: none;
+    background: $white;
+    padding: 0 10px;
+  }
+
+  &__list {
+    position: absolute;
+    background-color: $white;
+    border: 2px solid $black;
+    border-top-width: 0;
+    list-style: none;
+    top: 40px;
+    width: 100%;
+    box-shadow: 0 3px 10px $black;
+    margin-top: 5px;
+
+    &-item {
+      padding: 5px 10px;
+      border: 1px solid $black;
+      color: $black;
+
+      &:hover {
+        color: $red;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__error {
+    padding: 5px 10px;
+    color: $black;
+    padding: 8px;
+  }
+}
+
+.admin-autocomplete {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0;
+  width: 100%;
+  z-index: auto;
+
+  &__input {
+    height: 40px;
+    width: 100%;
+    border: 2px solid $light-blue;
+    border-radius: 5px;
+    outline: none;
+    background: $white;
+    padding: 0 10px;
+  }
+
+  &__list {
+    position: absolute;
+    background-color: $white;
+    border: 2px solid $light-blue;
+    border-top-width: 0;
+    list-style: none;
+    top: 40px;
+    width: 100%;
+    padding: 0;
+    z-index: 1;
+
+    &-item {
+      &:hover {
+        background-color: $blue;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__error {
+    color: $black;
+    padding: 8px;
+  }
+}

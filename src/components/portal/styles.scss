@@ -1,0 +1,52 @@
+@import "constants/base.scss";
+@import "constants/media-queries.scss";
+
+.portal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  width: 20%;
+  top: 30%;
+  left: 40%;
+  box-shadow: 0 0 10px $black;
+  background-color: $white;
+
+  &__close-img {
+    width: 25px;
+    padding: 5px;
+  }
+
+  &__close-btn {
+    align-self: flex-end;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  &__name {
+    font-size: 20px;
+    font-family: $lato;
+    margin-bottom: 20px;
+  }
+
+  &__admin-panel {
+    top: 45%;
+  }
+
+  @include media-table-large {
+    width: 50%;
+    left: 25%;
+  }
+
+  @include media-mobile-large {
+    width: 70%;
+    left: 15%;
+  }
+
+  @include media-mobile-small {
+    width: 90%;
+    left: 5%;
+  }
+}

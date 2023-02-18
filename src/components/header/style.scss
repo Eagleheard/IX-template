@@ -1,0 +1,12 @@
+@import "constants/base.scss";
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $green;
+  padding: 10px 0;
+}

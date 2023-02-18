@@ -1,0 +1,48 @@
+@import "constants/base.scss";
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: min-content;
+
+  &--button {
+    background-color: $blue;
+    color: #f2f3f4;
+    padding: 16px;
+    border: none;
+  }
+
+  &--content {
+    display: none;
+    position: absolute;
+    background-color: $white;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px $black;
+    z-index: 1;
+
+    & a {
+      color: $black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+
+      &:hover {
+        background-color: $light-blue;
+      }
+    }
+  }
+
+  &--adaptive {
+    display: none;
+  }
+
+  &:hover &--content {
+    display: block;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover &--button {
+    background-color: #5876c9;
+    transition: all 0.3s ease-in-out;
+  }
+}

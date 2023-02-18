@@ -1,0 +1,135 @@
+@import "constants/base.scss";
+
+.navigation {
+  position: relative;
+  background-color: $brown;
+  transition: all 0.3s ease-in-out;
+  min-height: 80vh;
+  -webkit-box-shadow: 4px 1px 31px 1px $brown;
+  -moz-box-shadow: 4px 1px 31px 1px $brown;
+  box-shadow: 4px 1px 31px 1px $brown;
+
+  &--list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.1s;
+  }
+
+  &--item {
+    text-decoration: none;
+    color: $white;
+    display: block;
+    padding: 12px 24px;
+    color: $white;
+    font-weight: 600;
+  }
+}
+
+.dropbtn--adaptive {
+  display: none;
+  background-color: $blue;
+  color: $white;
+  padding: 16px;
+  border: none;
+}
+
+.dropdown--adaptive {
+  position: relative;
+  display: inline-block;
+  width: min-content;
+}
+
+.dropdown-content--adaptive {
+  display: none;
+  background-color: $white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px $black;
+  z-index: 1;
+}
+
+.dropdown-content--adaptive a {
+  color: $black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content--adaptive a:hover {
+  background-color: $light-blue;
+}
+
+.dropbtn--adaptive:focus ~ .dropdown-content--adaptive {
+  display: block;
+  z-index: 15;
+  transition: all 0.3s ease-in-out;
+}
+
+.dropdown--adaptive:focus .dropbtn--adaptive {
+  background-color: $light-blue;
+  transition: all 0.3s ease-in-out;
+}
+
+#menu--toggle {
+  opacity: 0;
+  position: absolute;
+  top: 20px;
+  left: 100%;
+  transform: translateX(-120%);
+  width: 25px;
+  height: 25px;
+}
+
+.menu--btn {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  left: 100%;
+  transform: translateX(-120%);
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 5;
+
+  & span::before {
+    content: "";
+    top: -8px;
+  }
+
+  & span::after {
+    content: "";
+    top: 8px;
+  }
+
+  & span,
+  & span::before,
+  & span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: $white;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+#menu--toggle:checked ~ .menu--btn > span {
+  transform: rotate(45deg);
+}
+
+#menu--toggle:checked ~ .menu--btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+
+#menu--toggle:checked ~ .menu--btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menu--toggle:checked ~ .navigation--list {
+  min-width: 200px;
+}

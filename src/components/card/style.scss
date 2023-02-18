@@ -1,0 +1,49 @@
+@import "constants/base.scss";
+
+.article {
+  display: flex;
+  background: $dark-red;
+  color: $white;
+  padding: 10px;
+  width: 30%;
+  min-width: 200px;
+  max-width: 500px;
+  flex-grow: 1;
+
+  &--box {
+    width: 100px;
+    height: 100px;
+    background-color: $blue;
+  }
+
+  &--character {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    &_image {
+      width: 200px;
+    }
+
+    &_name {
+      font-size: 18px;
+    }
+  }
+}
+
+.animation {
+  animation: movement 5s infinite;
+}
+
+@keyframes movement {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(270px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}

@@ -1,0 +1,36 @@
+@import "constants/base.scss";
+@import "constants/media-queries.scss";
+
+.button {
+  background: transparent;
+  color: $white;
+  border: 1px solid $blue;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: $lato;
+  font-size: 18px;
+  padding: 5px;
+  margin: 0 10px;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $light-blue;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  &:disabled {
+    background-color: $gray;
+    color: $white;
+    border: 1px solid $gray;
+  }
+
+  &__sign-in {
+    color: $black;
+    border: 1px solid $light-blue;
+    padding: 5px 20px;
+  }
+
+  @include media-table-large {
+    width: 25%;
+  }
+}
